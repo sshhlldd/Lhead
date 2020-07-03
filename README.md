@@ -1,4 +1,4 @@
-# Galaxy-Jeep 前端代码库
+# Lhead 前端代码库
 
 ## Team members
 * 作者：耶子

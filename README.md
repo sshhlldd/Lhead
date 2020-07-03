@@ -33,7 +33,7 @@ npm run build
     num:5,//int抽取几人
     total:200,//int总共几人
     data: [{
-      "imgsrc|1": "https://***",//Array头像地址
+      "imgsrc": "https://***",//Array头像地址
       name: "@name"//头像名称
     }]
     }   
@@ -45,7 +45,7 @@ npm run build
     {
     prize:"一等奖", //看后端需要哪些可补充
     data: [{
-     "imgsrc|1": "https://***",//头像地址
+     "imgsrc": "https://***",//头像地址
       name: "@name"//头像名称
     }]
     }   

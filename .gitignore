@@ -1,0 +1,10 @@
+
+#忽略根目录下的文件
+.DS_Store
+/node_modules/
+/build/
+/PRD/
+/src/
+.json
+
+

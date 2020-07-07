@@ -110,7 +110,11 @@ $(function () {
             OverFunc: function (winArr) {
                let _params={
                 prize:res.prize,
-                data:winArr
+                data:winArr,
+                group_id:$('#group_id').val(),
+                live_id:$('#live_id').val(),
+                match_con:$('#match_con').val(),
+                is_more_award:$('#is_more_award').val()
                }
                $.ajax({
                 url: ajaxURL.sendRes,

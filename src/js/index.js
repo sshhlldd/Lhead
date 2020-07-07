@@ -97,6 +97,12 @@ $(function () {
     $.ajax({
       url: ajaxURL.getPortrait,
       type: 'get',
+      data: {
+        group_id: $('#group_id').val(),
+        live_id: $('#live_id').val(),
+        match_con: $('#match_con').val(),
+        is_more_award: $('#is_more_award').val()
+      },
       async: false,
       success: function (res) {
         $('#loading').hide();
@@ -108,18 +114,18 @@ $(function () {
             prize: res.prize,
             total: res.total,
             OverFunc: function (winArr) {
-               let _params={
-                prize:res.prize,
-                data:winArr,
-                group_id:$('#group_id').val(),
-                live_id:$('#live_id').val(),
-                match_con:$('#match_con').val(),
-                is_more_award:$('#is_more_award').val()
-               }
-               $.ajax({
+              let _params = {
+                prize: res.prize,
+                data: winArr,
+                group_id: $('#group_id').val(),
+                live_id: $('#live_id').val(),
+                match_con: $('#match_con').val(),
+                is_more_award: $('#is_more_award').val()
+              }
+              $.ajax({
                 url: ajaxURL.sendRes,
                 type: 'post',
-                data:_params,
+                data: _params,
                 async: false,
                 success: function (res1) {
                   console.log(res1);

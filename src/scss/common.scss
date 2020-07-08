@@ -90,11 +90,14 @@ a:hover {
   outline: 0;
 }
 
-a:focus,
-a:hover {
-  color: $primary-color;
-}
 
+.quitbtncon{
+  max-width: 1200px;
+  width: 90%;
+  margin:10px auto;
+  text-align: right;
+
+}
 .container {
   max-width: 1200px;
   width: 90%;
@@ -210,16 +213,21 @@ a:hover {
 }
 
 .btn-transparent {
-  color: $lighter;
-  border: 1px solid $lighter;
+  color: #fff;
+  border: 1px solid #fff;
   display: inline-block;
   font-size: 13px;
   letter-spacing: 1px;
-  padding: px2rem(12) px2rem(30);
-  border-radius: px2rem(40);
-
-  &:hover {
-    color: $light;
+  padding: 8px 30px;
+  border-radius: 10px;
+  opacity: 0.7;
+   &:hover{
+     background: rgba(70,188,190,0.4);
+     opacity: 1;
+   }
+  &:active {
+    margin-top: 2px;
+    box-shadow: 0 0 5px #333;
   }
 }
 

@@ -58,11 +58,12 @@ $(function () {
   }
   BASE.preloadimages(preimgs).done(function (images) {
     getData();
+    //mockData();
   });
 
   function mockData() {
     let imgArr = [require("../img/pic_01.png"), require("../img/pic_02.png"), require("../img/pic_03.png"), require("../img/pic_04.png")]
-    let numArr = [5, 10, 50, 100];
+    let numArr = [5, 110, 150, 100];
     let totArr = [10, 70, 100, 200];
     let cArr = [0, 0, 0, 1];
     let pArr = ["一等奖", "二等奖", "三等奖", "四等奖"];
@@ -74,6 +75,7 @@ $(function () {
       num: numArr[rn], //抽取几人
       total: totArr[rn], //总共几人
       data: [],
+      OverFunc:function(){}
     }
     for (let i = 0; i < totArr[rn]; i++) {
       let n = Math.floor(Math.random() * 4);
@@ -85,6 +87,12 @@ $(function () {
     }
     $('#loading').hide();
     if (opt.code == 0) {
+      console.log(opt.num);
+      console.log(opt.data.length);
+      if(opt.num>opt.data.length){
+        BASE.mypop("中獎人數設置不合理，請重新設置");
+        return false;
+      }
       BASE.game(opt);
 
     } else {
@@ -108,12 +116,17 @@ $(function () {
         $('#loading').hide();
         res = JSON.parse(res);
         if (res.code == 0) {
+          if(res.num>res.data.length){
+            BASE.mypop("中獎人數設置不合理，請重新設置");
+            return false;
+          }
           BASE.game({
             data: res.data,
             num: res.num,
             prize: res.prize,
             total: res.total,
             OverFunc: function (winArr) {
+             
               let _params = {
                 prize: res.prize,
                 data: winArr,

@@ -21,7 +21,8 @@ HTMLDirs.forEach(page => {
     filename: `./${page}.html`,
     template: `./src/page/${page}.html`,
     chunks: ["index"],
-    favicon: `./src/img/favicon.ico`
+    favicon: `./src/img/favicon.ico`,
+    minify: false
   });
 
 

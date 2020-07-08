@@ -74,9 +74,9 @@ function temp(opts){
   })
             
   html+='</ul></div><div class="bottom">\
-  <div class="left">'+opts.prize+' 共'+opts.num+'人</div>\
-  <div class="center"><button id="start" class="btn-main">开始抽奖</button></div>\
-  <div class="right">总人数 '+opts.total+' 人</div>\
+  <div class="left">獎項名稱：'+opts.prize+' 數量：'+opts.num+'人</div>\
+  <div class="center"><button id="start" class="btn-main">開始抽獎</button></div>\
+  <div class="right">可參與抽獎的人數為 '+opts.total+' 人</div>\
 </div>'
 $('.gamecon').html(html);
 $('.gamecon').off('click','#start');
@@ -84,7 +84,7 @@ $('.gamecon').off('click','#end');
 $('.gamecon').on('click','#start',function(){
   //$(this).attr('disabled',true);
   $(this).attr('id','end');
-  $(this).text('结束抽奖');
+  $(this).text('抽獎結束');
   $(this).addClass('btn-rotate');
   activeTimer = setInterval(function(){ aTimer() }, 400);
   if(opts.total>opts.per){
@@ -122,7 +122,7 @@ function win(opts){
       //把选到的这个从数组中删除
       data.splice(n,1);
     }
-
+   
     let html='<ul>';
     newArr.forEach((item,index)=>{
       html+='<li><div style="width:100px;height:100px"><img src="'+item.imgsrc+'" alt="'+item.name+'"></div>\

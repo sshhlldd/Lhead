@@ -57,13 +57,13 @@ $(function () {
     sendRes: "/Ent/index.php?a=EntLiveLottery&m=lotteryTestResult"
   }
   BASE.preloadimages(preimgs).done(function (images) {
-    getData();
-    //mockData();
+    //getData();
+    mockData();
   });
 
   function mockData() {
     let imgArr = [require("../img/pic_01.png"), require("../img/pic_02.png"), require("../img/pic_03.png"), require("../img/pic_04.png")]
-    let numArr = [5, 110, 150, 100];
+    let numArr = [5, 10, 70, 100];
     let totArr = [10, 70, 100, 200];
     let cArr = [0, 0, 0, 1];
     let pArr = ["一等奖", "二等奖", "三等奖", "四等奖"];
@@ -141,7 +141,9 @@ $(function () {
                 data: _params,
                 async: false,
                 success: function (res1) {
-                  console.log(res1);
+                  if(res1.code != 0){
+                    BASE.mypop(res1.msg);
+                  }
                 }
               })
             },

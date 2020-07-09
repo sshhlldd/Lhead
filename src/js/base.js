@@ -35,8 +35,9 @@ const game=function(d){
 
   od=JSON.parse(JSON.stringify(d.data))
   let cw=parseInt($('.container').width())-30;//父元素的宽度
+  let ch=parseInt($('.container').height())-90;//父元素的高度 //top的高度 出去padding 自适应
   let col=parseInt(cw/90);//横向最多放几个
-  let row=parseInt(550/90);//纵向最多放几个
+  let row=parseInt(ch/90);//纵向最多放几个
   let opts={
     dw:70,//img外面div的宽度和高度
     data:[],//头像信息

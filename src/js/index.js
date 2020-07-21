@@ -57,8 +57,8 @@ $(function () {
     sendRes: "/Ent/index.php?a=EntLiveLottery&m=lotteryTestResult"
   }
   BASE.preloadimages(preimgs).done(function (images) {
-    getData();
-    //mockData();
+    //getData();
+    mockData();
   });
 
   function mockData() {
